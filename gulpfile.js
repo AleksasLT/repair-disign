@@ -1,7 +1,5 @@
 const {src, dest, watch} = require('gulp');
 const browserSync = require('browser-sync').create();
-const csso = require('gulp-csso');
-const concat = require('gulp-concat');
 const sass = require('gulp-sass');
 
 // Static server
@@ -13,13 +11,13 @@ function bs() {
       }
   });
   watch("./*.html").on('change', browserSync.reload);
-  watch("./sass/**/*.sass", serveSass);
+  watch("./sass/**/*.sass", serveSass());
   watch("./js/*.js").on('change', browserSync.reload);
 };
 
 // Compile sass into CSS & auto-inject into browsers
 function serveSass() {
-  return src("./sass/*.sass")
+  return src("./sass/**/*.sass")
       .pipe(sass())
       .pipe(dest("./css"))
       .pipe(browserSync.stream());
