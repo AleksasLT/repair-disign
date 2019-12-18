@@ -331,6 +331,12 @@ template {
   margin: auto; }
 
 .header {
+  position: fixed;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  z-index: 99;
   padding: 24px 0;
   background-color: #131313; }
 
@@ -356,12 +362,8 @@ template {
   margin-right: 45px; }
 
 .hero {
-  position: fixed;
+  position: relative;
   padding-top: 100px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  z-index: 99;
   background: #131313 url("../img/hero-bg.jpg") no-repeat center/cover;
   height: 100vh;
   color: #fff; }
