@@ -20,4 +20,24 @@ let modal = $('.modal'),
       $('html, body').animate({scrollTop: 0}, 1500);
     })
   //console.log(modal);
+  let mySwiper = new Swiper ('.swiper-container', {
+    // Optional parameters
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    }
+  })
+  let next = $('.swiper-button-next');
+  let prev = $('.swiper-button-prev');
+  let bullets = $('.swiper-pagination');
+
+  next.css('left', prev.width() + 10 + bullets.width() + 10)
+  bullets.css('left', prev.width() + 10)
+
+  new WOW().init();
 });
