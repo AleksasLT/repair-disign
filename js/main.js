@@ -40,4 +40,55 @@ let modal = $('.modal'),
   bullets.css('left', prev.width() + 10)
 
   new WOW().init();
+
+  //Validation modal form
+  $('.modal__form').validate({
+    rules: {
+      // simple rule, converted to {required:true}
+      userName: "required",
+      userPhone: "required",
+      // compound rule
+      userEmail: {
+        required: true,
+        email: true
+      }
+    },
+    messages: {
+      userName: "Имя обязательно",
+      userPhone: "Телефон обязательно",
+      userEmail: {
+        required: "Укажите ваш email",
+        email: "Введите в формате: name@domain.com"
+      }
+    }
+  });
+
+  //Validation control form
+  $('.control__form').validate({
+    rules: {
+      // simple rule, converted to {required:true}
+      userName: "required",
+      userPhone: "required"
+    },
+    messages: {
+      userName: "Имя обязательно",
+      userPhone: "Телефон обязательно",
+    }
+  });
+
+  //Validation footer form
+  $('.footer__form').validate({
+    rules: {
+      // simple rule, converted to {required:true}
+      userName: "required",
+      userPhone: "required"
+    },
+    messages: {
+      userName: "Имя обязательно",
+      userPhone: "Телефон обязательно",
+    }
+  });
+
+  //Mask
+  $('[type=tel]').mask('+7(000)-000-00-00');
 });
