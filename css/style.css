@@ -825,6 +825,45 @@ img {
   width: auto;
   bottom: -2px; }
 
+.clients {
+  padding-bottom: 30rem;
+  background: url("../img/bg-line.svg") no-repeat center/cover; }
+  .clients__card {
+    position: relative;
+    min-width: 27.85rem;
+    max-height: 30.57rem;
+    margin-top: 2.77rem;
+    background-color: #fff;
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.04); }
+    .clients__card-heading {
+      display: flex;
+      align-items: center;
+      margin-left: 1.42rem;
+      margin-top: 1.71rem; }
+      .clients__card-heading img {
+        width: 5.42rem;
+        height: 5.42rem;
+        margin-right: 1.64rem; }
+      .clients__card-heading strong {
+        font-family: 'Yeseva One', cursive;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 1.28rem;
+        line-height: 1.64rem;
+        width: 14rem; }
+    .clients__card-description {
+      padding: 0.82rem 0.28rem 7.5rem 1.42rem;
+      color: #959595;
+      font-family: 'FuturaBookC' , cursive;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 1.0714rem;
+      line-height: 180%; }
+    .clients__card-image {
+      position: absolute;
+      top: 27.64rem;
+      left: -1rem; }
+
 .footer {
   background-color: linear-gradient(180deg, rgba(24, 24, 24, 0.9) 3.47%, rgba(24, 24, 24, 0.72) 100%);
   background: url("../img/footer-bg.jpg") no-repeat center/cover;
@@ -834,6 +873,7 @@ img {
     max-width: 63.07rem;
     margin: auto;
     margin-bottom: 3.714rem;
+    margin-top: -21rem;
     padding: 2.5rem; }
   .footer__title {
     text-transform: uppercase;
@@ -890,7 +930,8 @@ img {
     margin-bottom: 4rem; }
   .footer__icon {
     width: 28px;
-    height: 27px; }
+    height: 27px;
+    padding: 15px; }
     .footer__icon-letter {
       background: url("../img/letter.svg") no-repeat center; }
     .footer__icon-inst {
