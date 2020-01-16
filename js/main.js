@@ -60,6 +60,19 @@ let modal = $('.modal'),
         required: "Укажите ваш email",
         email: "Введите в формате: name@domain.com"
       }
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        url: "./send.php",
+        type: "POST",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax ok');
+          alert('Данные отправлены');
+          $(form)[0].reset();
+          modal.removeClass('modal--visible');
+        }
+      });
     }
   });
 
@@ -73,6 +86,18 @@ let modal = $('.modal'),
     messages: {
       userName: "Имя обязательно",
       userPhone: "Телефон обязательно",
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        url: "./control.php",
+        type: "POST",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax ok');
+          alert('Данные отправлены');
+          $(form)[0].reset();
+        }
+      });
     }
   });
 
@@ -86,6 +111,18 @@ let modal = $('.modal'),
     messages: {
       userName: "Имя обязательно",
       userPhone: "Телефон обязательно",
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        url: "./questions.php",
+        type: "POST",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('Ajax ok');
+          alert('Данные отправлены');
+          $(form)[0].reset();
+        }
+      });
     }
   });
 

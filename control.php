@@ -1,7 +1,6 @@
 <?php
 
 $userName = $_POST['userName'];
-$userEmail = $_POST['userEmail'];
 $userPhone = $_POST['userPhone'];
 
 // Import PHPMailer classes into the global namespace
@@ -30,14 +29,14 @@ try {
     $mail->Port       = 465;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('test_tester_2001@mail.ru', 'Заявка с сайта');
+    $mail->setFrom('test_tester_2001@mail.ru', 'Заяка с сайта');
     $mail->addAddress('398393@mail.ru');
 
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = "Новая заявка с сайта / Раздел Заказать звонок";
-    $mail->Body    = "Имя пользователя: ${userName}, его телефон: ${userPhone}, почта: ${userEmail}";
+    $mail->Subject = "Новая заявка с сайта / Раздел Онлайн контроль";
+    $mail->Body    = "Имя пользователя: ${userName}, его телефон: ${userPhone}";
 
 
     if ($mail->send()) {

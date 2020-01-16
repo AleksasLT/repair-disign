@@ -36,13 +36,16 @@ try {
 
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = "Новая заявка с сайта";
+    $mail->Subject = "Новая заявка с сайта / Раздел остались вопросы";
     $mail->Body    = "Имя пользователя: ${userName}, его телефон: ${userPhone}, вопрос: ${userQuestion}";
 
 
-    $mail->send();
-    header('Location: thanks.html');
+    
+    if ($mail->send()) {
+        echo "ok";
+    } else {
+        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+    }
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-?>
