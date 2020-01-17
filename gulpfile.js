@@ -35,19 +35,16 @@ function serveSass() {
 function buildCSS(done) {
   src("css/**/**.css")
   .pipe(cleanCSS({compatibility: 'ie8'}))
-  .pipe(dest('dist/css/'));
+  .pipe(dest("dist/css/"));
   done();
 };
 
 function buildJS(done) {
   src(["js/**.js", "!js/**.min.js"])
-    .pipe(minify({ext:{
-      min:'.js'
-    }
-}))
-    .pipe(dest('dist/js/'));
+    .pipe(minify({ext:{src:'-debug.js', min:'.js'}}))
+    .pipe(dest("dist/js/"));
   src("js/**.min.js")
-    .pipe(dest('dist/js/'));
+    .pipe(dest("dist/js/"));
   done();
 }
 
@@ -73,14 +70,14 @@ function buildFonts(done) {
 }
 
 function imageMin(done) {
-  src("img/**/*.{jpg, png, jpeg}")
+  src("img/**/**.{jpg, png, jpeg}")
     .pipe(tinypng({
       key: '1HlLxfGsJ8C4NtvzlCZBsVgVBg4jkHmJ'}))
     .pipe(dest("dist/img/"));
-  src("img/**/**")
+  src("img/**/**.svg")
     .pipe(dest("dist/img/")) 
   done();
   }
 
 exports.serve = bs;
-exports.build = series(buildCSS, buildJS, buildHTML, buildPHP, buildFonts, imageMin);
+exports.build = series(buildHTML, buildCSS, buildJS, buildPHP, buildFonts, imageMin);
